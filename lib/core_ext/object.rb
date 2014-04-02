@@ -8,4 +8,7 @@ class Object
     puts e.to_s
     puts e.backtrace
   end
+
+  def expect
+  end
 end
