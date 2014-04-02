@@ -5,5 +5,5 @@ it 'lets you test equality' do
 end
 
 it 'lets you test inequality' do
-  expect(1).not.to_equal(1)
+  expect(1).not.to_equal(2)
 end
