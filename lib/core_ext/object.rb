@@ -1,4 +1,6 @@
 class Object
+  attr_accessor :actual
+
   def it(title, &block)
     block.call
     print '.'
@@ -10,12 +12,13 @@ class Object
   end
 
   def expect(actual)
+    self.actual = actual
     self
   end
 
   def to_equal(expected)
-    if self != expected
-      raise RuntimeError.new("expected #{self} to equal #{expected}")
+    if self.actual != expected
+      raise RuntimeError.new("expected #{self.actual} to equal #{expected}")
     end
   end
 end
