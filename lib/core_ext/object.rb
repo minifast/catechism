@@ -23,7 +23,11 @@ class Object
 
   def to_equal(expected)
     if (self.actual != expected) ^ self.inverted
-      raise RuntimeError.new("expected #{self.actual} to equal #{expected}")
+      if self.inverted
+        raise RuntimeError.new("expected #{self.actual} not to equal #{expected}")
+      else
+        raise RuntimeError.new("expected #{self.actual} to equal #{expected}")
+      end
     end
   end
 end
