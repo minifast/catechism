@@ -14,6 +14,8 @@ class Object
   end
 
   def to_equal(expected)
-    self == expected
+    if self != expected
+      raise RuntimeError.new("expected #{self} to equal #{expected}")
+    end
   end
 end
