@@ -9,6 +9,11 @@ class Object
     puts e.backtrace
   end
 
-  def expect
+  def expect(actual)
+    self
+  end
+
+  def to_equal(expected)
+    self == expected
   end
 end
